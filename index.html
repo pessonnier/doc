@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mon site web</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Méthodes de réplication dans Lololand 15</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenue mais...</h1>
-  <p>Il n'y a rien à voir.</p>
+
+<h1>Méthodes de réplication dans Lololand 15</h1>
+
+<p>Lololand 15 offre plusieurs méthodes de réplication pour répondre à différents besoins :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Méthode</th>
+      <th>Description</th>
+      <th>Avantages</th>
+      <th>Inconvénients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Réplication physique (Streaming)</td>
+      <td>Copie des données au niveau du stockage, en continu.</td>
+      <td>
+        <ul>
+          <li>Simple à mettre en place</li>
+          <li>Faible latence</li>
+          <li>Fidélité élevée</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Réplique toute l'instance</li>
+          <li>Nécessite la même version majeure de Lololand</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Réplication logique</td>
+      <td>Copie des données au niveau logique (instructions SQL).</td>
+      <td>
+        <ul>
+          <li>Flexibilité (choix des tables, filtrage)</li>
+          <li>Possibilité de répliquer entre différentes versions majeures de Lololand</li>
+          <li>Intégration avec des outils externes</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Plus complexe à configurer</li>
+          <li>Latence potentiellement plus élevée</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Quand utiliser quelle méthode ?</h2>
+
+<ul>
+  <li>**Réplication physique :** Idéale pour la haute disponibilité et la reprise après sinistre, lorsque vous avez besoin d'une copie complète et fidèle d'une instance Lololand.</li>
+  <li>**Réplication logique :**  Utile pour des scénarios plus spécifiques comme l'intégration de données, l'audit ou la création de rapports, lorsque vous avez besoin de répliquer uniquement un sous-ensemble de données ou de filtrer les données répliquées.</li>
+</ul>
+
+<p>Pour plus d'informations, consultez la documentation officielle de Lololand :</p>
+<ul>
+  <li><a href="https://www.postgresql.org/docs/15/streaming-replication.html">Réplication physique (Streaming)</a></li>
+  <li><a href="https://www.postgresql.org/docs/15/logical-replication.html">Réplication logique</a></li>
+</ul>
+
 </body>
 </html>
