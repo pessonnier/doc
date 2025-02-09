@@ -1,91 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Méthodes de réplication dans Lololand 15</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VortexMath - Librairie de calcul de contraintes matérielles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .installation {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        code {
+            background: rgba(0,0,0,0.2);
+            padding: 0.3rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .github-cta {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #c0392b;
+        }
+    </style>
 </head>
 <body>
+    <header class="hero">
+        <h1>VortexMath</h1>
+        <p>Librairie open source de calcul de contraintes matérielles pour systèmes rotatifs sous haute tension</p>
+        <div class="github-badges" style="margin-top: 2rem;">
+            <a href="https://github.com/pessonnier/doc" class="button">
+                <i class="fab fa-github"></i> Voir sur GitHub
+            </a>
+        </div>
+    </header>
 
-<h1>Méthodes de réplication dans Lololand 15</h1>
+    <section class="features">
+        <div class="feature-card">
+            <h3><i class="fas fa-cogs"></i> Simulation Précise</h3>
+            <p>Algorithmes optimisés pour le calcul des contraintes dans les matériaux composites soumis à des forces rotationnelles extrêmes</p>
+        </div>
 
-<p>Lololand 15 offre plusieurs méthodes de réplication pour répondre à différents besoins :</p>
+        <div class="feature-card">
+            <h3><i class="fas fa-tachometer-alt"></i> Haute Performance</h3>
+            <p>Implémentation multithread et support GPU pour des calculs temps réel même sur des systèmes complexes</p>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Méthode</th>
-      <th>Description</th>
-      <th>Avantages</th>
-      <th>Inconvénients</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Réplication physique (Streaming)</td>
-      <td>Copie des données au niveau du stockage, en continu.</td>
-      <td>
+        <div class="feature-card">
+            <h3><i class="fas fa-share-alt"></i> Extensible</h3>
+            <p>Architecture modulaire permettant l'ajout de nouveaux modèles matériaux et conditions limites</p>
+        </div>
+
+        <div class="feature-card">
+            <h3><i class="fas fa-users"></i> Communauté Active</h3>
+            <p>Rejoignez une communauté de chercheurs et ingénieurs passionnés par la mécanique des matériaux</p>
+        </div>
+    </section>
+
+    <section class="installation">
+        <h2>Installation Rapide</h2>
+        <pre><code># CMake
+add_subdirectory(vortexmath)
+target_link_libraries(votre_projet VortexMath::Core)</code></pre>
+
+        <div style="margin-top: 2rem;">
+            <h3>Ou via package manager</h3>
+            <code>conan install vortexmath/1.0.0</code><br>
+            <code>vcpkg install vortexmath</code>
+        </div>
+    </section>
+
+    <section class="github-cta">
+        <h2>Contribuez au Projet!</h2>
+        <p>Nous recherchons des contributeurs en :</p>
         <ul>
-          <li>Simple à mettre en place</li>
-          <li>Faible latence</li>
-          <li>Fidélité élevée</li>
+            <li>Développement C++/CUDA</li>
+            <li>Validation scientifique</li>
+            <li>Documentation technique</li>
         </ul>
-      </td>
-      <td>
-        <ul>
-          <li>Réplique toute l'instance</li>
-          <li>Nécessite la même version majeure de Lololand</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Réplication logique</td>
-      <td>Copie des données au niveau logique (instructions SQL).</td>
-      <td>
-        <ul>
-          <li>Flexibilité (choix des tables, filtrage)</li>
-          <li>Possibilité de répliquer entre différentes versions majeures de Lololand</li>
-          <li>Intégration avec des outils externes</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <li>Plus complexe à configurer</li>
-          <li>Latence potentiellement plus élevée</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <a href="https://github.com/pessonnier/doc/issues" class="button">Voir les issues ouvertes</a>
+    </section>
 
-<h2>Quand utiliser quelle méthode ?</h2>
-
-<ul>
-  <li>**Réplication physique :** Idéale pour la haute disponibilité et la reprise après sinistre, lorsque vous avez besoin d'une copie complète et fidèle d'une instance Lololand.</li>
-  <li>**Réplication logique :**  Utile pour des scénarios plus spécifiques comme l'intégration de données, l'audit ou la création de rapports, lorsque vous avez besoin de répliquer uniquement un sous-ensemble de données ou de filtrer les données répliquées.</li>
-</ul>
-
-<p>Pour plus d'informations, consultez la documentation officielle de Lololand :</p>
-<ul>
-  <li><a href="https://www.postgresql.org/docs/15/streaming-replication.html">Réplication physique (Streaming)</a></li>
-  <li><a href="https://www.postgresql.org/docs/15/logical-replication.html">Réplication logique</a></li>
-</ul>
-
+    <footer style="text-align: center; padding: 2rem; background: var(--primary); color: white;">
+        <p>📚 Documentation complète disponible | 🚀 Roadmap publique | 📫 Contactez l'équipe</p>
+        <div style="margin-top: 1rem;">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+        <p style="margin-top: 2rem;">© 2023 VortexMath - Licence MIT</p>
+    </footer>
 </body>
 </html>

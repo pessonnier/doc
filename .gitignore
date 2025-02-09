@@ -1,0 +1,10 @@
+build/
+.vscode/
+*.user
+*.suo
+*.sln
+*.vcxproj*
+*.obj
+*.lib
+*.dll
+*.exe

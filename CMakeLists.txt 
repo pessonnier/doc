@@ -1,0 +1,29 @@
+cmake_minimum_required(VERSION 3.15)
+project(VortexMath VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_library(VortexMathCore
+    src/MaterialProperties.cpp
+    src/RotationalStress.cpp
+    src/GeometryUtils.cpp
+)
+
+target_include_directories(VortexMathCore
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+# Exemple d'intégration avec une bibliothèque mathématique
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+target_link_libraries(VortexMathCore PUBLIC Eigen3::Eigen)
+
+# Tests unitaires avec Catch2
+option(BUILD_TESTING "Build tests" ON)
+if(BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
+
+# Exemples d'utilisation
+add_executable(VortexMathExample examples/BasicUsage.cpp)
+target_link_libraries(VortexMathExample PRIVATE VortexMathCore)
